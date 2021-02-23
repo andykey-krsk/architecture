@@ -3,6 +3,8 @@
 
 abstract class DBConnection
 {
+    use TSingletone;
+
     private Connection $connection;
 
     public function __construct()
@@ -10,7 +12,7 @@ abstract class DBConnection
         $this->connection = $this->createConnection();
     }
 
-    public function startDelivery()
+    public function startConnection()
     {
         echo "Посылаем запрос в ДБ!".PHP_EOL;
         $this->connection->connect();

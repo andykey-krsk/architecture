@@ -1,16 +1,28 @@
 <?php
-include "config/config.php";
+//include "config/config.php";
+//use app\engine\Autoload;
+//spl_autoload_register([new Autoload(), 'loadClass']);
 
-use app\engine\Autoload;
+require 'Traits/TSingletone.php';
 
-spl_autoload_register([new Autoload(), 'loadClass']);
+require 'Database/DBConnection.php';
+require 'Database/MySQLFactory.php';
+require 'Database/OracleFactory.php';
+require 'Database/PostgreSQLFactory.php';
+
+require 'Connection/Connection.php';
+require 'Connection/MySQL.php';
+require 'Connection/Oracle.php';
+require 'Connection/PostgreSQL.php';
 
 
-function test(Logistic $logistic)
+function test(DBConnection $dbConnection)
 {
-    $logistic->startDelivery();
+    $dbConnection->startConnection();
 }
 
-test(new RoadLogistic());
+test(new MySQLFactory());
 echo "-----------".PHP_EOL;
-test(new ShipLogistic());
+test(new OracleFactory());
+echo "-----------".PHP_EOL;
+test(new PostgreSQLFactory());
