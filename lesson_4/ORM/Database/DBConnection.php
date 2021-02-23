@@ -1,5 +1,9 @@
 <?php
 
+namespace app\database;
+
+use app\traits\TSingletone;
+use app\connection\Connection;
 
 abstract class DBConnection
 {

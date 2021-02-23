@@ -1,5 +1,7 @@
 <?php
 
+namespace app\traits;
+
 trait TSingletone
 {
     private static $instance = null;

@@ -1,16 +1,16 @@
 <?php
+include 'config/config.php';
 
-require 'traits/TSingletone.php';
+use app\database\DBConnection;
+use app\database\MySQLFactory;
+use app\database\OracleFactory;
+use app\database\PostgreSQLFactory;
+use app\engine\Autoload;
 
-require 'database/DBConnection.php';
-require 'database/MySQLFactory.php';
-require 'database/OracleFactory.php';
-require 'database/PostgreSQLFactory.php';
+include "engine/Autoload.php";
 
-require 'connection/Connection.php';
-require 'connection/MySQL.php';
-require 'connection/Oracle.php';
-require 'connection/PostgreSQL.php';
+spl_autoload_register([new Autoload(), 'loadClass']);
+
 
 
 function test(DBConnection $dbConnection)

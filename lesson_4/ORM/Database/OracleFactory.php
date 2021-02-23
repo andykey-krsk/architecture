@@ -1,5 +1,9 @@
 <?php
 
+namespace app\database;
+
+use app\connection\Connection;
+use app\connection\Oracle;
 
 class OracleFactory extends DBConnection
 {
