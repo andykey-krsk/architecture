@@ -1,19 +1,16 @@
 <?php
-//include "config/config.php";
-//use app\engine\Autoload;
-//spl_autoload_register([new Autoload(), 'loadClass']);
 
-require 'Traits/TSingletone.php';
+require 'traits/TSingletone.php';
 
-require 'Database/DBConnection.php';
-require 'Database/MySQLFactory.php';
-require 'Database/OracleFactory.php';
-require 'Database/PostgreSQLFactory.php';
+require 'database/DBConnection.php';
+require 'database/MySQLFactory.php';
+require 'database/OracleFactory.php';
+require 'database/PostgreSQLFactory.php';
 
-require 'Connection/Connection.php';
-require 'Connection/MySQL.php';
-require 'Connection/Oracle.php';
-require 'Connection/PostgreSQL.php';
+require 'connection/Connection.php';
+require 'connection/MySQL.php';
+require 'connection/Oracle.php';
+require 'connection/PostgreSQL.php';
 
 
 function test(DBConnection $dbConnection)
