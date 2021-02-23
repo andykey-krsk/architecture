@@ -1,5 +1,6 @@
 <?php
 
+namespace app\connection;
 
 class PostgreSQL extends Connection
 {
