@@ -1,10 +1,10 @@
 <?php
 
-namespace app\database;
 
-use app\interfaces\IModel;
+namespace app\record;
 
-class DBRecrord implements IModel
+
+class PostgreSQLRecord extends DBRecord
 {
 
     public function getOne($id)
@@ -15,11 +15,6 @@ class DBRecrord implements IModel
     public function getAll()
     {
         // TODO: Implement getAll() method.
-    }
-
-    public function getTableName()
-    {
-        // TODO: Implement getTableName() method.
     }
 
     public function insert()
@@ -35,5 +30,10 @@ class DBRecrord implements IModel
     public function delete($id)
     {
         // TODO: Implement delete() method.
+    }
+
+    public function getTableName()
+    {
+        // TODO: Implement getTableName() method.
     }
 }
