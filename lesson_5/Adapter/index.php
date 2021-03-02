@@ -4,14 +4,14 @@ include "../Autoload.php";
 
 spl_autoload_register([new Autoload(), 'loadClass']);
 
-$diametr = 5;
+$l = 31.4159;
 
 $circleAdapter = new CircleAdapter(new CircleAreaLib());
 
-echo "Площадь круга с диаметром $diametr равна " . $circleAdapter->circleArea($diametr) . PHP_EOL;
+echo "Площадь круга с длинной окружности $l равна " . $circleAdapter->circleArea($l) . PHP_EOL;
 
-$diagonal = 7.0710678118654752440084436210485;
+$a = 5;
 
 $squareAdapter = new SquareAdapter(new SquareAreaLib());
 
-echo "Площадь квадрата с диагональю $diagonal равна " . $squareAdapter->squareArea($diagonal) . PHP_EOL;
+echo "Площадь квадрата со стороной $a равна " . $squareAdapter->squareArea($a) . PHP_EOL;

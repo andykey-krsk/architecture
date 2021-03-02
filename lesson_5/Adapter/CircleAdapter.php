@@ -13,6 +13,7 @@ class CircleAdapter implements ICircle
 
     public function circleArea(float $circumference)
     {
-        return $this->circleAreaLib->getCircleArea($circumference);
+        $diagonal = $circumference / M_PI;
+        return $this->circleAreaLib->getCircleArea($diagonal);
     }
 }

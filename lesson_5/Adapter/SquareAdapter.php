@@ -12,6 +12,7 @@ class SquareAdapter implements ISquare
 
     public function squareArea(float $sideSquare)
     {
-       return  $this->squareAreaLib->getSquareArea($sideSquare);
+        $diagonal = $sideSquare * (sqrt(2));
+        return  $this->squareAreaLib->getSquareArea($diagonal);
     }
 }
