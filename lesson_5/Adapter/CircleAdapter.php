@@ -3,7 +3,6 @@
 
 class CircleAdapter implements ICircle
 {
-
     private $circleAreaLib;
 
     public function __construct(CircleAreaLib $circleAreaLib)
