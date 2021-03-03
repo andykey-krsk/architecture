@@ -1,11 +1,12 @@
 <?php
 
+namespace app\PaySystem;
 
 class Yandex implements IPaySystem
 {
 
-    public function transaction(Order $order)
+    public function transaction($cost)
     {
-        echo "Ордер проведен через платежную систему Yandex" . PHP_EOL;
+        echo "Платёж проведен через систему Yandex на сумму $cost" . PHP_EOL;
     }
 }

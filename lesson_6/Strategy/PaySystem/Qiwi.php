@@ -1,11 +1,11 @@
 <?php
 
+namespace app\PaySystem;
 
 class Qiwi implements IPaySystem
 {
-
-    public function transaction(Order $order)
+    public function transaction($cost)
     {
-        echo "Ордер проведен через платежную систему Qiwi" . PHP_EOL;
+        echo "Платёж проведен через систему Qiwi на сумму $cost" . PHP_EOL;
     }
 }

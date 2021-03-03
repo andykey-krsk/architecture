@@ -1,11 +1,13 @@
 <?php
 
+namespace app\PaySystem;
+
 
 class WebMoney implements IPaySystem
 {
 
-    public function transaction(Order $order)
+    public function transaction($cost)
     {
-        echo "Ордер проведен через платежную систему WebMoney" . PHP_EOL;
+        echo "Платёж проведен через систему WebMoney на сумму $cost" . PHP_EOL;
     }
 }
