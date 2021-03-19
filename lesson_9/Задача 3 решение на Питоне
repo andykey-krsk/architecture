@@ -1,0 +1,50 @@
+Решение
+Python
+
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
+          31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+          73, 79, 83, 89, 97]
+ 
+s = [0]*(primes[-1]+1)
+for new_prime in primes:
+    for i in range(new_prime,primes[-1]+1):
+        if i>new_prime:
+            s[i]+=s[i-new_prime]
+        elif i==new_prime:
+            s[i]+=1
+ 
+for i in range(2,primes[-1]+1):
+    if s[i]>=5000:
+        print(i)
+        break
+		
+
+Добавил возможность вывода всех возможных комбинаций сумм, может пригодится. Код получился очень простым и умным.
+
+Python
+
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
+          31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+          73, 79, 83, 89, 97]
+ 
+s = [0]*(primes[-1]+1)
+p = {i:[] for i in range(primes[-1]+1)}
+for new_prime in primes:
+    for i in range(new_prime,primes[-1]+1):
+        if i==new_prime:
+            s[i]+=1
+            p[i]+=[str(new_prime)]
+        elif i>new_prime:
+            s[i]+=s[i-new_prime]
+            p[i]+=[f'{new_prime}+{k}' for k in p[i-new_prime]]
+ 
+for i in range(2,primes[-1]+1):
+    if s[i]>=5000:
+        print('Искомое число:',i)
+        q = input('Вывести все возможные суммы для него? (y/n): ')
+        if q=='y':
+            print('{0}{1}{0}'.format('='*(i//2),i))
+            for n,j in enumerate(p[i]):
+                print(f'{n+1}: {j}')
+            print('{0}END{0}'.format('='*(i//2)))
+        break
